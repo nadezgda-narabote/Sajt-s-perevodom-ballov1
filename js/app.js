@@ -15,6 +15,7 @@ const g4Error = document.getElementById("g4Error");
 
 const calcBtn = document.getElementById("calcBtn");
 const resetBtn = document.getElementById("resetBtn");
+const themeToggleBtn = document.getElementById("themeToggle");
 
 function safeNumber(value) {
   const num = Number(value);
@@ -242,3 +243,26 @@ bindInlineValidation(g4Input, g4Error, 0, 3, "ГК4");
 
 calcBtn.addEventListener("click", calc);
 resetBtn.addEventListener("click", resetForm);
+
+function applyTheme(themeName) {
+  document.documentElement.setAttribute("data-theme", themeName);
+  const icon = themeName === "dark" ? "☀️" : "🌙";
+  const label = themeName === "dark" ? "Светлая" : "Темная";
+  themeToggleBtn.textContent = `${icon} ${label}`;
+}
+
+function initTheme() {
+  const savedTheme = localStorage.getItem("siteTheme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+  applyTheme(initialTheme);
+}
+
+themeToggleBtn.addEventListener("click", () => {
+  const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+  const nextTheme = currentTheme === "dark" ? "light" : "dark";
+  localStorage.setItem("siteTheme", nextTheme);
+  applyTheme(nextTheme);
+});
+
+initTheme();

@@ -12,10 +12,17 @@
     <div class="container">
       <nav class="nav">
         <a class="brand" href="#top">ОГЭ Русский</a>
-        <a class="nav-link" href="#calculator">Калькулятор</a>
+        <div class="nav-actions">
+          <a class="nav-link" href="#calculator">Калькулятор</a>
+          <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">🌙 Тема</button>
+        </div>
       </nav>
       <div class="hero-content">
-        <h1>Перевод баллов ОГЭ по русскому языку в оценку</h1>
+        <h1>
+          <span class="title-sticker">📌 ОГЭ</span>
+          Перевод баллов ОГЭ по русскому языку в оценку
+          <span class="title-sticker second">📝 Конспект</span>
+        </h1>
         <p>
           Введите общий первичный балл и баллы по грамотности, чтобы сразу получить
           итоговую оценку и понятное пояснение по результату.
@@ -28,16 +35,20 @@
   <main id="top">
     <section class="features container">
       <h2>Почему это удобно</h2>
+      <p class="marker-note">Сначала введи общий балл, потом ГК1-ГК4.</p>
       <div class="features-grid">
         <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">⚡</div>
           <h3>Мгновенный результат</h3>
           <p>Оценка и объяснение формируются сразу после ввода данных.</p>
         </article>
         <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">✅</div>
           <h3>Проверка ошибок</h3>
           <p>Поля валидируются, чтобы исключить некорректные значения.</p>
         </article>
         <article class="feature-card">
+          <div class="feature-icon" aria-hidden="true">🧭</div>
           <h3>Понятные правила</h3>
           <p>Учитываются пороги ОГЭ и сумма баллов по ГК1-ГК4.</p>
         </article>
