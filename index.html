@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Быстрый перевод первичных баллов ОГЭ по русскому языку в итоговую школьную оценку." />
+  <title>Перевод баллов ОГЭ по русскому языку</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="#top">ОГЭ Русский</a>
+        <a class="nav-link" href="#calculator">Калькулятор</a>
+      </nav>
+      <div class="hero-content">
+        <h1>Перевод баллов ОГЭ по русскому языку в оценку</h1>
+        <p>
+          Мини-лендинг с удобным калькулятором: введите общий первичный балл и баллы
+          по грамотности, чтобы сразу получить итоговую оценку и пояснение.
+        </p>
+        <a class="hero-button" href="#calculator">Рассчитать оценку</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="features container">
+      <h2>Почему это удобно</h2>
+      <div class="features-grid">
+        <article class="feature-card">
+          <h3>Мгновенный результат</h3>
+          <p>Оценка и объяснение формируются сразу после ввода данных.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Проверка ошибок</h3>
+          <p>Поля валидируются, чтобы исключить некорректные значения.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Понятные правила</h3>
+          <p>Учитываются пороги ОГЭ и сумма баллов по ГК1-ГК4.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="calculator-wrap container" id="calculator">
+      <div class="card">
+        <h2>Калькулятор</h2>
+        <p class="subtitle">
+          Итоговая оценка рассчитывается по общему баллу и сумме по критериям ГК1-ГК4.
+        </p>
+
+        <div class="note">
+          <strong>Важно:</strong> итог по грамотности влияет на возможность получить 4 или 5.
+        </div>
+
+        <div class="grid">
+          <div class="field full">
+            <label for="total">Общий первичный балл</label>
+            <input id="total" type="number" min="0" max="37" step="1" inputmode="numeric" placeholder="Введите число от 0 до 37" />
+            <small>Допустимый диапазон: от 0 до 37.</small>
+            <div class="error-text" id="totalError"></div>
+          </div>
+
+          <div class="field">
+            <label for="g1">ГК1</label>
+            <input id="g1" type="number" min="0" max="3" step="1" inputmode="numeric" placeholder="0-3" />
+            <small>Максимум: 3 балла.</small>
+            <div class="error-text" id="g1Error"></div>
+          </div>
+
+          <div class="field">
+            <label for="g2">ГК2</label>
+            <input id="g2" type="number" min="0" max="3" step="1" inputmode="numeric" placeholder="0-3" />
+            <small>Максимум: 3 балла.</small>
+            <div class="error-text" id="g2Error"></div>
+          </div>
+
+          <div class="field">
+            <label for="g3">ГК3</label>
+            <input id="g3" type="number" min="0" max="3" step="1" inputmode="numeric" placeholder="0-3" />
+            <small>Максимум: 3 балла.</small>
+            <div class="error-text" id="g3Error"></div>
+          </div>
+
+          <div class="field">
+            <label for="g4">ГК4</label>
+            <input id="g4" type="number" min="0" max="3" step="1" inputmode="numeric" placeholder="0-3" />
+            <small>Максимум: 3 балла.</small>
+            <div class="error-text" id="g4Error"></div>
+          </div>
+        </div>
+
+        <div class="live-box">
+          Сумма баллов за грамотность:
+          <strong><span id="literacySum">0</span> из 12</strong>
+        </div>
+
+        <div class="buttons">
+          <button class="main" type="button" id="calcBtn">Рассчитать</button>
+          <button class="secondary" type="button" id="resetBtn">Сбросить</button>
+        </div>
+
+        <div id="res" class="result"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Учебный проект: перевод баллов ОГЭ по русскому языку.</p>
+    </div>
+  </footer>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
