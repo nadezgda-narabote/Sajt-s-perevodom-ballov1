@@ -46,6 +46,14 @@ body {
     );
 }
 
+.ghost-cursor-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: screen;
+}
+
 .container {
   width: min(100%, 1040px);
   margin: 0 auto;
@@ -520,6 +528,16 @@ button:disabled {
   --btn-secondary-text: #ffe7b1;
   --btn-primary-text: #2f2100;
   --link-focus-ring: rgba(255, 200, 115, 0.25);
+}
+
+:root[data-theme="dark"] .ghost-cursor-layer {
+  mix-blend-mode: lighten;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ghost-cursor-layer {
+    display: none;
+  }
 }
 
 :root[data-theme="dark"] .brand,
